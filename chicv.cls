@@ -7,8 +7,8 @@
     a4paper,
     left=0.8in,
     right=0.8in,
-    top=0.4in,
-    bottom=0.8in,
+    top=0.5in,
+    bottom=0.5in,
     nohead
 ]{geometry}
 
@@ -38,9 +38,10 @@
 %%% Only add "updated" footer to last page
 \pagestyle{fancy}
 \fancypagestyle{default}{
+    \fancyhf{}
+    \RenewDocumentCommand{\headrulewidth}{}{0pt}
 }
 \fancypagestyle{lastpage}{
-    \fancyhf{}
     \fancyhf{}
     \RenewDocumentCommand{\headrulewidth}{}{0pt}
     \rfoot{\color{gray}Updated on \today}
@@ -87,11 +88,12 @@
         \newfontfamily{\headingfont}{Avenir Next}
     }{
         % use local font in ./fonts folder
-        \newfontfamily{\headingfont}{Avenir Next LT Pro}[
-            Path = ./fonts,
+        \newfontfamily{\headingfont}{AvenirNextLTPro}[
+            Path = ./fonts/,
             Extension = .otf,
-            BoldFont = AvenirNextLTPro-Bold,
-            ItalicFont = AvenirNextLTPro-Italic,
+            UprightFont = *-Regular,
+            BoldFont = *-Bold,
+            ItalicFont = *-Italic,
         ]
     }
 }
